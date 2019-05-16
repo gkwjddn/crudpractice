@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Detail Post</h1>
+
+<p>
+    <h2>제목 : {{post.title}}</h2>
+    <p>작성자 : {{post.writer}}</p>
+    <p>발행일 : {{post.pub_date}}</p>
+    <p>
+        본문
+        <br>
+        {{post.body}}
+    </p>
+</p>
+<br>
+<a href="{% url 'home' %}"> home </a>
+<br>
+<a href="{% url 'edit' post.id %}">수정하기</a>
+<a href="{%url 'delete' post.id %}">삭제하기</a>
+
+{%endblock%}

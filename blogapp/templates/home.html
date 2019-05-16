@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <h1>정우가 만든 블로그 </h1>
+    <a href="{% url 'new'%}">새 글 작성하기 </a>
+    <h2>블로그 글 목록</h2>
+    <hr>
+    <div class="row">
+        {% for post in posts %}
+            <a href="{% url 'detail' post.id %}">
+                <b>제목 : {{post.title}}</b>
+            </a>
+            <hr>
+            작성자 : {{post.writer}}
+            <hr>
+            {{post.pub_date}}
+        </div>
+
+
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
